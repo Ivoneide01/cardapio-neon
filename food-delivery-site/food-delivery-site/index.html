@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Delivery - Hambúrgueres, Pizzas e Pastéis</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <h1>🍔 Food Delivery</h1>
+            <button class="cart-button" id="cartButton">
+                <span class="cart-icon">🛒</span>
+                <span class="cart-count" id="cartCount">0</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Hambúrgueres Section -->
+        <section class="category-section">
+            <h2 class="category-title">🍔 Hambúrgueres</h2>
+            <div class="products-grid">
+                <div class="product-card">
+                    <img src="/food-delivery-site/food-delivery-site/assets/images/burger1.jpg" alt="Hambúrguer Clássico" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-name">Hambúrguer Clássico</h3>
+                        <p class="product-description">Pão, carne, queijo, alface e tomate</p>
+                        <p class="product-price">R$ 25,00</p>
+                        <button class="add-to-cart-btn" data-id="burger1" data-name="Hambúrguer Clássico" data-price="25.00" data-type="burger">
+                            Adicionar ao Carrinho
+                        </button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="/food-delivery-site/food-delivery-site/assets/images/burger2.jpg" alt="Hambúrguer Gourmet" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-name">Hambúrguer Gourmet</h3>
+                        <p class="product-description">Pão artesanal, carne premium, queijo brie</p>
+                        <p class="product-price">R$ 35,00</p>
+                        <button class="add-to-cart-btn" data-id="burger2" data-name="Hambúrguer Gourmet" data-price="35.00" data-type="burger">
+                            Adicionar ao Carrinho
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pizzas Section -->
+        <section class="category-section">
+            <h2 class="category-title">🍕 Pizzas</h2>
+            <div class="products-grid">
+                <div class="product-card">
+                    <img src="/food-delivery-site/food-delivery-site/assets/images/pastel1.jpg" alt="Pizza Mista" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-name">Pizza Mista</h3>
+                        <p class="product-description">Mussarela, presunto e tomate</p>
+                        <p class="product-price">R$ 40,00</p>
+                        <button class="add-to-cart-btn" data-id="pizza1" data-name="Pizza Mista" data-price="40.00" data-type="pizza">
+                            Adicionar ao Carrinho
+                        </button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="/food-delivery-site/food-delivery-site/assets/images/pastel2.jpg" alt="Pizza Calabresa" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-name">Pizza Calabresa</h3>
+                        <p class="product-description">Mussarela, calabresa e cebola</p>
+                        <p class="product-price">R$ 45,00</p>
+                        <button class="add-to-cart-btn" data-id="pizza2" data-name="Pizza Calabresa" data-price="45.00" data-type="pizza">
+                            Adicionar ao Carrinho
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pastéis Section -->
+        <section class="category-section">
+            <h2 class="category-title">🥟 Pastéis</h2>
+            <div class="products-grid">
+                <div class="product-card">
+                    <img src="/food-delivery-site/food-delivery-site/assets/images/pastel1.jpg" alt="Pastel de Carne" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-name">Pastel de Carne</h3>
+                        <p class="product-description">Recheio de carne moída temperada</p>
+                        <p class="product-price">R$ 8,00</p>
+                        <button class="add-to-cart-btn" data-id="pastel1" data-name="Pastel de Carne" data-price="8.00" data-type="pastel">
+                            Adicionar ao Carrinho
+                        </button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="/food-delivery-site/food-delivery-site/assets/images/pastel2.jpg" alt="Pastel de Queijo" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-name">Pastel de Queijo</h3>
+                        <p class="product-description">Recheio de queijo mussarela</p>
+                        <p class="product-price">R$ 7,00</p>
+                        <button class="add-to-cart-btn" data-id="pastel2" data-name="Pastel de Queijo" data-price="7.00" data-type="pastel">
+                            Adicionar ao Carrinho
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Cart Modal -->
+    <div class="modal" id="cartModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Meu Carrinho</h2>
+                <button class="close-btn" id="closeCart">&times;</button>
+            </div>
+            <div class="modal-body" id="cartItems">
+                <p class="empty-cart">Seu carrinho está vazio</p>
+            </div>
+            <div class="modal-footer">
+                <div class="total-section">
+                    <span class="total-label">Total:</span>
+                    <span class="total-value" id="totalValue">R$ 0,00</span>
+                </div>
+                <button class="checkout-btn" id="checkoutBtn">Finalizar Pedido</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Promotion Popup -->
+    <div class="popup" id="promoPopup">
+        <div class="popup-content">
+            <div class="popup-header">
+                <h3>🎉 Promoção Especial!</h3>
+                <button class="close-btn" id="closePromo">&times;</button>
+            </div>
+            <div class="popup-body">
+                <p>Você ganhou um <strong>Refrigerante Grátis</strong> na compra de 2 pizzas!</p>
+                <p class="promo-emoji">🥤</p>
+            </div>
+            <div class="popup-footer">
+                <button class="ok-btn" id="okPromo">OK, Entendi!</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
